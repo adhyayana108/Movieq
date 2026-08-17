@@ -67,6 +67,7 @@ func (r *MemoryRepository) Create(_ context.Context, movie domain.Movie) (domain
 	r.nextID++
 	r.movies[movie.ID] = movie
 	return movie, nil
+	
 }
 
 func (r *MemoryRepository) Update(_ context.Context, id string, movie domain.Movie) (domain.Movie, error) {
@@ -94,3 +95,4 @@ func (r *MemoryRepository) Delete(_ context.Context, id string) error {
 
 
 var _ MovieRepository = (*MemoryRepository)(nil)
+
